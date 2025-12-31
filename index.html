@@ -1,82 +1,84 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>蛇.pw - 首页</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1677ff',
-            secondary: '#0FC6C2',
-            accent: '#FF2E2E',
-            dark: '#1D2129',
-          },
-          fontFamily: {
-            sans: ['PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
-          },
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 蛇.pw - 首页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1677ff',
+                        secondary: '#0FC6C2',
+                        accent: '#FF2E2E',
+                        dark: '#1D2129',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
         }
-      }
-    }
-  </script>
-
-  <!-- 🔧 手机自适应核心修复 -->
-  <style>
-    html {
-      font-size: 16px;
-      -webkit-text-size-adjust: 100%;
-    }
-  </style>
-
-  <style type="text/tailwindcss">
-    @layer utilities {
-      .game-card {
-        @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300;
-      }
-      .nav-icon {
-        @apply text-gray-500 flex flex-col items-center justify-center text-sm cursor-pointer;
-      }
-      .nav-icon.active {
-        @apply text-primary;
-      }
-      .page-content { @apply hidden; }
-      .page-content.active { @apply block; }
-      .loading {
-        @apply animate-spin inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full;
-      }
-    }
-  </style>
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .rotate-text {
+                transform: rotate(-15deg);
+            }
+            .game-card {
+                @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .nav-icon {
+                @apply text-gray-500 flex flex-col items-center justify-center text-sm cursor-pointer;
+            }
+            .nav-icon.active {
+                @apply text-primary;
+            }
+            .page-content {
+                @apply hidden;
+            }
+            .page-content.active {
+                @apply block;
+            }
+            .loading {
+                @apply animate-spin inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full;
+            }
+        }
+    </style>
 </head>
+<body class="bg-gray-100 min-h-screen font-sans">
+    <!-- 页面容器 -->
+    <div class="max-w-md mx-auto bg-white min-h-screen relative">
+        <!-- 顶部区域 -->
+        <header class="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center" id="user-avatar">
+                <img src="九尾.jpg" alt="用户头像" class="w-12 h-12 rounded-full object-cover border-2 border-primary">
+            </div>
+            <h1 class="text-xl font-bold text-dark" id="page-title">首页</h1>
+            <div class="w-12" id="header-actions">
+                <!-- 可添加其他头部操作按钮 -->
+            </div>
+        </header>
 
-<body class="bg-gray-100 font-sans">
-  <!-- 页面容器（宽度优化，不破 UI） -->
-  <div class="w-full max-w-[430px] mx-auto bg-white min-h-screen relative">
-
-    <!-- 顶部 -->
-    <header class="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
-      <div id="user-avatar">
-        <img src="九尾.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-primary">
-      </div>
-      <h1 class="text-xl font-bold text-dark" id="page-title">首页</h1>
-      <div class="w-12"></div>
-    </header>
-
-    <!-- 首页 -->
-    <div class="page-content active" id="home-page">
-
-      <!-- ✅ 主图：完整显示，不裁剪 -->
-      <div class="relative w-full" id="main-banner">
-        <img src="推广图片1.heic" class="w-full h-auto block" alt="">
-        <div class="absolute bottom-4 right-4 w-14 h-14 bg-accent rounded-full flex items-center justify-center text-white text-xl" id="banner-play-btn">
-          <i class="fa fa-play"></i>
-        </div>
-      </div>
+        <!-- 所有页面内容 -->
+        <div class="page-container">
+            <!-- 首页内容 -->
+            <div class="page-content active" id="home-page">
+                <!-- 主图区域 -->
+                <div class="relative w-full h-48" id="main-banner">
+                    <!-- 背景图片 -->
+                    <img src="推广图片1.heic" alt= class="w-full h-full object-cover">
+                    
+                  
+                        </span>
+                    </div>
                     
                     <!-- 红色图标 -->
                     <div class="absolute bottom-4 right-4 w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white text-2xl cursor-pointer" id="banner-play-btn">
