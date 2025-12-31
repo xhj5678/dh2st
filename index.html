@@ -1,12 +1,13 @@
 <html lang="zh-CN"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title> 蛇.pw - 首页</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
     <!-- 配置Tailwind自定义颜色 -->
-    <script>
+    <script defer>
         tailwind.config = {
             theme: {
                 extend: {
@@ -25,6 +26,11 @@
     </script>
     
     <style type="text/tailwindcss">
+        @layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
         @layer utilities {
             .text-shadow {
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -55,7 +61,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen font-sans">
     <!-- 页面容器 -->
-    <div class="max-w-md mx-auto bg-white min-h-screen relative">
+    <div class="max-w-md mx-auto bg-white min-h-screen relative pb-safe">
         <!-- 顶部区域 -->
         <header class="bg-white shadow-sm px-4 py-3 flex justify-between items-center">
             <div class="flex items-center" id="user-avatar">
@@ -72,7 +78,7 @@
             <!-- 首页内容 -->
             <div class="page-content active" id="home-page">
                 <!-- 主图区域 -->
-                <div class="relative w-full h-48" id="main-banner">
+                <div class="relative w-full h-[40vw] max-h-52 min-h-36" id="main-banner">
                     <!-- 背景图片 -->
                     <img src="推广图片1.heic" alt= class="w-full h-full object-cover">
                     
@@ -121,7 +127,7 @@
                         <!-- 游戏卡片1 -->
                         <div class="game-card">
                             <div class="relative">
-                                <img src="星耀国际.jpg" alt="星耀国际游戏封面" class="w-full h-24 object-cover">
+                                <img src="星耀国际.jpg" alt="星耀国际游戏封面" class="w-full h-24 object-cover" loading="lazy">
                                 <div class="absolute top-0 left-0 bg-blue-500 text-white text-xs px-2 py-1">官方</div>
                             </div>
                             <div class="p-3">
@@ -136,7 +142,7 @@
                         <!-- 游戏卡片2 -->
                          <div class="game-card">
                             <div class="relative">
-                                <img src="征途国际.jpg" alt="征途国际游戏封面" class="w-full h-24 object-cover">
+                                <img src="征途国际.jpg" alt="征途国际游戏封面" class="w-full h-24 object-cover" loading="lazy">
                                 <div class="absolute top-0 left-0 bg-blue-500 text-white text-xs px-2 py-1">官方</div>
                             </div>
                             <div class="p-3">
@@ -151,7 +157,7 @@
                         <!-- 游戏卡片3 -->
                          <div class="game-card">
                             <div class="relative">
-                                <img src="胜天国际.JPG" alt="胜天国际游戏封面" class="w-full h-24 object-cover">
+                                <img src="胜天国际.JPG" alt="胜天国际游戏封面" class="w-full h-24 object-cover" loading="lazy">
                                 <div class="absolute top-0 left-0 bg-blue-500 text-white text-xs px-2 py-1">官方</div>
                             </div>
                             <div class="p-3">
@@ -166,7 +172,7 @@
                         <!-- 游戏卡片4 -->
                        <div class="game-card">
                             <div class="relative">
-                                <img src="fj.jpg" alt="飞机下载图标" class="w-full h-24 object-cover">
+                                <img src="fj.jpg" alt="飞机下载图标" class="w-full h-24 object-cover" loading="lazy">
                                 <div class="absolute top-0 left-0 bg-blue-500 text-white text-xs px-2 py-1">官方</div>
                             </div>
                             <div class="p-3">
@@ -181,7 +187,7 @@
                         <!-- 游戏卡片5 -->
                         <div class="game-card">
                             <div class="relative">
-                                <img src="全国商k.jpg" alt="壹号娛游戏封面" class="w-full h-24 object-cover">
+                                <img src="全国商k.jpg" alt="壹号娛游戏封面" class="w-full h-24 object-cover" loading="lazy">
                                 <div class="absolute top-0 left-0 bg-blue-500 text-white text-xs px-2 py-1">官方</div>
                             </div>
                             <div class="p-3">
@@ -196,7 +202,7 @@
                         <!-- 游戏卡片6 -->
                         <div class="game-card">
                             <div class="relative">
-                                <img src="未满18.jpg" alt="未满18图片" class="w-full h-24 object-cover">
+                                <img src="未满18.jpg" alt="未满18图片" class="w-full h-24 object-cover" loading="lazy">
                                 <div class="absolute top-0 left-0 bg-blue-500 text-white text-xs px-2 py-1">官方</div>
                             </div>
                             <div class="p-3">
@@ -382,7 +388,7 @@
         </footer>
 
         <!-- 为了避免内容被底部导航遮挡 -->
-        <div class="h-20"></div>
+        <div class="h-24"></div>
     </div>
 
     <script>
